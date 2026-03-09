@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Studio
+
+Themable starter project template for building production interfaces with [Next.js](https://nextjs.org), [Tailwind CSS v4](https://tailwindcss.com), [Base UI](https://base-ui.com), and [Coss UI](https://coss.com/ui) Styles.
+
+Studio provides a complete design system foundation — tokens, typography, spacing, color, and 50+ pre-styled UI particles — along with a library of full-page layout templates you can use as starting points for real features.
+
+## Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router, React 19) |
+| Styling | Tailwind CSS v4 with CSS variable design tokens |
+| Primitives | Base UI (unstyled, accessible components) |
+| Particles | Coss UI (styled components via `shadcn` CLI) |
+| Variants | class-variance-authority |
+| Icons | lucide-react |
+| Theming | next-themes (light / dark / system) |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to browse the documentation and templates.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+studio/
+├── app/                        # Next.js App Router
+│   ├── layout.tsx              # Root layout (fonts, providers, stacking context)
+│   ├── page.tsx                # Home
+│   ├── globals.css             # Design tokens and Tailwind config
+│   ├── doc/                    # Documentation section
+│   │   ├── particles/          # Component catalog
+│   │   ├── style-guide/        # Visual style reference
+│   │   └── templates/          # Template gallery
+│   └── templates/              # Full-page layout templates
+│       ├── app-home/
+│       ├── command-center/
+│       ├── dashboard-grid/
+│       ├── image-generator/
+│       ├── login/
+│       ├── marketing-page/
+│       ├── masonry-gallery/
+│       ├── master-detail/
+│       ├── multi-column-expandable/
+│       ├── notes-dashboard/
+│       ├── sidebar-detail/
+│       └── workspace/
+├── components/
+│   ├── ui/                     # Coss UI particles (managed via shadcn CLI)
+│   └── *.tsx                   # App-specific components
+├── hooks/                      # Custom React hooks
+├── lib/                        # Shared utilities
+└── product-architecture/       # Developer guides and best practices
+```
 
-## Learn More
+## Templates
 
-To learn more about Next.js, take a look at the following resources:
+Studio ships with 12 page templates covering common application layouts:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **App Home** — landing/overview page
+- **Command Center** — action-oriented control panel
+- **Dashboard Grid** — multi-card data overview
+- **Image Generator** — media creation interface
+- **Login** — authentication page
+- **Marketing Page** — public-facing content
+- **Masonry Gallery** — image/content grid
+- **Master Detail** — list + detail split view
+- **Multi-Column Expandable** — collapsible multi-panel layout
+- **Notes Dashboard** — content management workspace
+- **Sidebar Detail** — sidebar navigation with detail pane
+- **Workspace** — full application shell
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding Components
 
-## Deploy on Vercel
+New Coss UI particles are added via the shadcn CLI:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx shadcn@latest add <component-name>
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Components are pulled from the `@coss` registry and placed in `components/ui/`. Once added, you own the source and can modify freely.
+
+## Design System
+
+Design tokens are defined as CSS variables in `app/globals.css` and mapped to Tailwind via `@theme inline`. The system covers:
+
+- **Color** — semantic tokens (`destructive`, `info`, `success`, `warning`) plus brand colors (`primary`, `secondary`, `accent`, `muted`) with alpha-based borders for depth
+- **Typography** — Geist Sans for body, a configurable heading font for titles, Geist Mono for code
+- **Spacing** — compact by default (components are one size smaller than shadcn/ui defaults)
+- **Theming** — light and dark modes with system preference detection
+
+## Architecture Docs
+
+The `product-architecture/` directory contains guides for building on top of Studio:
+
+- **[Project Conventions](product-architecture/project-conventions.md)** — file naming, imports, directory structure
+- **[Design Guide](product-architecture/design-guide.md)** — page layout, visual hierarchy, component assembly
+- **[Coss UI Best Practices](product-architecture/coss-ui-best-practices.md)** — component APIs, the `render` prop, naming conventions
+- **[Next.js Patterns](product-architecture/next-patterns.md)** — routing, layouts, data fetching, error boundaries
+- **[Error Handling](product-architecture/error-handling.md)** — error feedback mapping, form validation, recovery
+- **[Agent Readiness](product-architecture/agent-readiness.md)** — building products that agents can operate
+
+## License
+
+[MIT](LICENSE)
