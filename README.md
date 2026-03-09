@@ -4,6 +4,32 @@ Themable starter project template for building production interfaces with [Next.
 
 Studio provides a complete design system foundation — tokens, typography, spacing, color, and 50+ pre-styled UI particles — along with a library of full-page layout templates you can use as starting points for real features.
 
+## Screenshots
+
+### Marketing Page
+
+A polished, conversion-ready landing page with hero sections, feature grids, social proof, and CTAs. Use it as your public-facing homepage or adapt it for any product launch — the layout, copy hierarchy, and responsive breakpoints are all production-ready.
+
+![Marketing Page](public/Quikest%20Studio_Marketing.webp)
+
+### Particles
+
+A browsable catalog of 50+ pre-styled UI components — buttons, dialogs, selects, toasts, tables, and more — each with live previews and copy-pasteable code. Every particle is accessible out of the box and fully customizable since you own the source.
+
+![Particles](public/Quikest%20Studio_Particles.webp)
+
+### Style Guide
+
+A visual reference for the entire design system: color tokens, typography scale, spacing, shadows, radius, and theming. Use it to stay consistent across your app or hand it to designers as a living spec that's always in sync with your code.
+
+![Style Guide](public/Quikest%20Studio_StyleGuide.webp)
+
+### Templates
+
+A gallery of 12 full-page layout templates covering common app patterns — dashboards, workspaces, master-detail views, command centers, and more. Each template includes design annotations explaining the architectural decisions so you understand the "why" behind every layout choice.
+
+![Templates](public/Quikest%20Studio_Templates.webp)
+
 ## Stack
 
 | Layer | Technology |
