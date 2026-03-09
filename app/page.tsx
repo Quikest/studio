@@ -165,7 +165,7 @@ export default function Page() {
 
           <div
             className={cn(
-              "relative z-10 flex max-w-2xl flex-col gap-5 px-4",
+              "relative flex max-w-2xl flex-col gap-5 px-4",
             )}
           >
             <Link
@@ -215,7 +215,7 @@ export default function Page() {
                 <BookOpenIcon data-icon="inline-start" />
                 Browse docs
               </Button>
-              <Button>
+              <Button render={<Link href="/sign-up" />}>
                 Get started
                 <ArrowRightIcon data-icon="inline-start" />
               </Button>
@@ -270,7 +270,7 @@ export default function Page() {
               Tailwind CSS.
             </p>
             <div className="mt-8">
-              <Button size="lg">
+              <Button size="lg" render={<Link href="/sign-up" />}>
                 Get started
                 <ArrowRightIcon data-icon="inline-start" />
               </Button>
@@ -323,11 +323,11 @@ export default function Page() {
                 you can focus on building your product.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Button size="lg">
+                <Button size="lg" render={<Link href="/sign-up" />}>
                   Get started
                   <ArrowRightIcon data-icon="inline-start" />
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" render={<Link href="/doc/particles" />}>
                   Browse components
                   <ArrowRightIcon data-icon="inline-start" />
                 </Button>
@@ -431,11 +431,11 @@ export default function Page() {
               Clone the repo and start shipping your next project in minutes.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button size="lg">
+              <Button size="lg" render={<Link href="/sign-up" />}>
                 Get started
                 <ArrowRightIcon data-icon="inline-start" />
               </Button>
-              <Button variant="ghost" size="lg">
+              <Button variant="ghost" size="lg" render={<a href="https://github.com/Quikest/studio" target="_blank" rel="noopener noreferrer" />}>
                 View on GitHub
               </Button>
             </div>

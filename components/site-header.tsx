@@ -67,7 +67,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <SignInDialog />
-          <Button size="sm">
+          <Button size="sm" render={<Link href="/sign-up" />}>
             Get started
             <ArrowRightIcon data-icon="inline-start" />
           </Button>

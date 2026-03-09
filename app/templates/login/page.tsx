@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { GithubIcon, ImageIcon } from "lucide-react"
 
-import { LogoMark } from "@/components/logo"
+import { LogoMark, LogoWordmark } from "@/components/logo"
+import { useThemeConfig } from "@/components/theme-config-provider"
 import { Button } from "@/components/ui/button"
 import { Field, FieldLabel } from "@/components/ui/field"
 import {
@@ -121,16 +122,28 @@ function GeometricPattern() {
 }
 
 export default function LoginTemplate() {
+  const { logoScale } = useThemeConfig()
+
   return (
     <div className="h-svh overflow-y-auto">
       <div className="flex min-h-full">
         {/* Form Panel */}
         <div className="flex w-full flex-col px-4 py-8 sm:px-8 lg:w-1/2 lg:px-12">
           <div className="flex items-center gap-2.5">
-            <LogoMark className="size-6" />
-            <span className="text-lg font-semibold tracking-tight">
-              Acme Inc.
-            </span>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="-ml-2.5 gap-2.5"
+              render={<Link href="/" />}
+            >
+              <span
+                className="flex items-center gap-2.5 origin-left"
+                style={{ transform: `scale(${logoScale})` }}
+              >
+                <LogoMark />
+                <LogoWordmark />
+              </span>
+            </Button>
           </div>
 
           <div className="flex flex-1 items-center justify-center">
