@@ -357,7 +357,7 @@ function LogoCustomizeSection() {
         </label>
         <Slider
           value={logoScale}
-          onValueChange={(v: number) => setLogoScale(v)}
+          onValueChange={(v) => setLogoScale(typeof v === "number" ? v : v[0])}
           min={0.4}
           max={1.2}
           step={0.05}
